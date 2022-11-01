@@ -1,4 +1,4 @@
-module github.com/fschnko/smbios
+module github.com/ernierasta/smbios
 
 go 1.13
 
