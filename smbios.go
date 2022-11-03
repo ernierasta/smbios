@@ -85,6 +85,19 @@ func (exp *Explorer) Processor() *Processor {
 	return &Processor{}
 }
 
+// Processors returns all processors in system
+func (exp *Explorer) Processors() []*Processor {
+
+	cpus := []*Processor{}
+
+	for _, t := range exp.tables {
+		if t.Type == 4 {
+			cpus = append(cpus, &Processor{t})
+		}
+	}
+	return cpus
+}
+
 func (exp *Explorer) PortConnectors() []*PortConnector {
 	result := make([]*PortConnector, 0)
 	for _, t := range exp.tables {
